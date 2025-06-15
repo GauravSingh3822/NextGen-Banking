@@ -1,0 +1,338 @@
+/* Profile Page Styles */
+.profile-container {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(90deg, white, var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.profile-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-icon.danger {
+    color: var(--danger);
+}
+
+.btn-icon.danger:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+/* Info Grid Styles */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-value {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-edit {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+/* Security Grid Styles */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.security-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.security-icon {
+    font-size: 1.5rem;
+}
+
+.security-info {
+    flex: 1;
+}
+
+.security-info h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.security-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+/* Linked Accounts Styles */
+.linked-accounts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.account-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.account-icon {
+    font-size: 1.5rem;
+}
+
+.account-details {
+    flex: 1;
+}
+
+.account-details h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.account-details p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+/* Danger Zone Styles */
+.danger-zone {
+    border-left: 4px solid var(--danger);
+}
+
+.danger-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.danger-info h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.danger-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: var(--dark);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: transform 0.3s;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: white;
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 1.5rem;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .danger-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .form-actions {
+        justify-content: space-between;
+    }
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.edit-actions .btn-icon {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.5rem;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Banking - The Future of Finance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+<!-- Welcome Animation -->
+<div class="welcome-animation">
+    <div class="welcome-logo">
+        <div class="welcome-logo-icon"></div>
+        <div class="welcome-logo-text">NextGen</div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="loading-progress"></div>
+    </div>
+</div>
+
+<!-- Main Content -->   
+<div class="container">
+       <div id="navbar-container"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Future of Banking is Here</h1>
+            <p>NextGen Banking offers a seamless, secure, and innovative banking experience. Manage your finances with cutting-edge technology designed for the modern world.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="hero-register-btn">Get Started</button>
+                <button class="btn btn-outline">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4a6bff" />
+                        <stop offset="100%" stop-color="#00d4ff" />
+                    </linearGradient>
+                </defs>
+                <path d="M250,50 C350,50 450,150 450,250 C450,350 350,450 250,450 C150,450 50,350 50,250 C50,150 150,50 250,50 Z" fill="url(#gradient)" opacity="0.8" />
+                <path d="M250,100 C325,100 400,175 400,250 C400,325 325,400 250,400 C175,400 100,325 100,250 C100,175 175,100 250,100 Z" fill="none" stroke="white" stroke-width="2" opacity="0.5" />
+                <circle cx="250" cy="250" r="120" fill="none" stroke="white" stroke-width="2" opacity="0.3" />
+                <circle cx="250" cy="250" r="80" fill="none" stroke="white" stroke-width="2" opacity="0.2" />
+                <path d="M250,150 L250,350 M150,250 L350,250" stroke="white" stroke-width="2" opacity="0.5" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements" id="floating-elements"></div>
+</div>
+
+
+</body>
+    <script src="js/navbar.js"></script>
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create floating elements
+        const floatingContainer = document.getElementById('floating-elements');
+        for (let i = 0; i < 15; i++) {
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+
+            // Random size between 50px and 200px
+            const size = Math.random() * 150 + 50;
+            element.style.width = `${size}px`;
+            element.style.height = `${size}px`;
+
+            // Random position
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.top = `${Math.random() * 100}%`;
+
+            // Random animation duration
+            element.style.animationDuration = `${Math.random() * 10 + 10}s`;
+
+            floatingContainer.appendChild(element);
+        }
+    });
+    function initWelcomeAnimation() {
+    const welcomeAnimation = document.querySelector('.welcome-animation');
+    const progressBar = document.getElementById('loading-progress');
+
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 10;
+        if (progress > 100) progress = 100;
+        progressBar.style.width = `${progress}%`;
+
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                welcomeAnimation.classList.add('fade-out');
+            }, 500);
+        }
+    }, 200);
+}
+function redirectIfAuthenticated() {
+  const token = localStorage.getItem('token');
+
+  // If token exists, redirect away from login/register pages
+  if (token) {
+    // Redirect to home/dashboard — update the path as needed
+    window.location.href = 'home.html';
+  }
+}
+document.addEventListener('DOMContentLoaded', initWelcomeAnimation);
+document.addEventListener('DOMContentLoaded', redirectIfAuthenticated);
+</script>
+</html>

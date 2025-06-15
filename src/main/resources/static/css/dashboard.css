@@ -1,0 +1,283 @@
+/* Dashboard Specific Styles */
+.dashboard {
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Quick Actions */
+.quick-actions h2,
+.account-overview h2,
+.recent-activity h2,
+.notifications h2,
+.financial-insights h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.action-card h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.action-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Account Overview */
+.account-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.account-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-card.primary {
+    border-left: 4px solid var(--primary);
+}
+
+.account-card.savings {
+    border-left: 4px solid var(--secondary);
+}
+
+.account-card h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.balance {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin: 1rem 0;
+}
+
+.account-number {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.account-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-small {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Activity & Notifications */
+.activity-notifications {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .activity-notifications {
+        grid-template-columns: 1fr;
+    }
+}
+
+.activity-list,
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item,
+.notification-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activity-icon {
+    font-size: 1.2rem;
+}
+
+.activity-details {
+    flex: 1;
+}
+
+.activity-description {
+    color: white;
+    font-weight: 500;
+}
+
+.activity-date {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.activity-amount {
+    font-weight: bold;
+}
+
+.activity-amount.credit {
+    color: #4CAF50;
+}
+
+.activity-amount.debit {
+    color: #F44336;
+}
+
+.notification-item {
+    align-items: flex-start;
+}
+
+.notification-item.important {
+    border-left: 3px solid #FF9800;
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.notification-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.notification-time {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Financial Insights */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.insight-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insight-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.insight-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 4px;
+}
+
+.progress-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 1.5rem;
+    }
+    
+    .action-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .account-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}

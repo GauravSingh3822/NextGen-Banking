@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextGen Banking - My Profile</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="css/navbar.css   ">
+  <script src="js/auth.js" defer></script>
+  <script src="js/profile.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="container">
+   <div id="navbar-container"></div>
+
+
+    <main class="profile-container">
+      <div class="profile-header">
+        <h1>My Profile</h1>
+        <button class="btn btn-outline" id="edit-profile-btn">Edit Profile</button>
+      </div>
+
+      <div class="profile-content">
+
+        <!-- Personal Information Section -->
+        <section class="profile-section" id="personal-info-section">
+  <div class="section-header">
+    <h2>Personal Information</h2>
+    <button class="btn-icon edit-section" data-section="personal" aria-label="Edit Personal Information">
+      <!-- Edit icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+      </svg>
+    </button>
+    <div class="edit-actions" style="display:none;">
+      <button class="btn-icon btn-save" aria-label="Save Changes">💾</button>
+      <button class="btn-icon btn-cancel" aria-label="Cancel Edit">✖</button>
+    </div>
+  </div>
+  
+  <div class="section-content">
+    <div class="info-grid">
+      <!-- your info items here -->
+      <div class="info-item">
+        <label for="edit-full-name">Full Name</label>
+        <div class="info-value" id="full-name">John Doe</div>
+        <input type="text" class="info-edit" id="edit-full-name" value="John Doe" style="display: none;" />
+      </div>
+      <div class="info-item">
+        <label for="edit-dob">Date of Birth</label>
+        <div class="info-value" id="dob">15/03/1985</div>
+        <input type="date" class="info-edit" id="edit-dob" value="1985-03-15" style="display: none;" />
+      </div>
+      <div class="info-item">
+        <label for="edit-email">Email Address</label>
+        <div class="info-value" id="email">john.doe@example.com</div>
+        <input type="email" class="info-edit" id="edit-email" value="john.doe@example.com" style="display: none;" />
+      </div>
+      <div class="info-item">
+        <label for="edit-phone">Phone Number</label>
+        <div class="info-value" id="phone">+1 (555) 123-4567</div>
+        <input type="tel" class="info-edit" id="edit-phone" value="+1 (555) 123-4567" style="display: none;" />
+      </div>
+      <div class="info-item">
+        <label for="edit-address">Address</label>
+        <div class="info-value" id="address">123 Main St, Apt 4B, New York, NY 10001</div>
+        <textarea class="info-edit" id="edit-address" style="display: none;">123 Main St, Apt 4B, New York, NY 10001</textarea>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Account Security Section -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2>Account Security</h2>
+          </div>
+          <div class="section-content">
+            <div class="security-grid">
+              <div class="security-item">
+                <div class="security-icon">🔒</div>
+                <div class="security-info">
+                  <h3>Password</h3>
+                  <p>Last changed 3 months ago</p>
+                </div>
+                <button class="btn btn-outline btn-small">Change Password</button>
+              </div>
+              <div class="security-item">
+                <div class="security-icon">📱</div>
+                <div class="security-info">
+                  <h3>Two-Factor Authentication</h3>
+                  <p>Currently disabled</p>
+                </div>
+                <button class="btn btn-primary btn-small">Enable 2FA</button>
+              </div>
+              <div class="security-item">
+                <div class="security-icon">✉️</div>
+                <div class="security-info">
+                  <h3>Email Notifications</h3>
+                  <p>All notifications enabled</p>
+                </div>
+                <button class="btn btn-outline btn-small">Manage</button>
+              </div>
+              <div class="security-item">
+                <div class="security-icon">📞</div>
+                <div class="security-info">
+                  <h3>SMS Alerts</h3>
+                  <p>Only security alerts enabled</p>
+                </div>
+                <button class="btn btn-outline btn-small">Configure</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Linked Accounts Section -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2>Linked Accounts</h2>
+            <button class="btn-icon" aria-label="Add Linked Account">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="section-content">
+            <div class="linked-accounts">
+              <div class="account-card">
+                <div class="account-icon">🏦</div>
+                <div class="account-details">
+                  <h3 id="account-type">No linked Account</h3>
+                  <p id="account-number"></p>
+                </div>
+                <button class="btn-icon danger" aria-label="Remove External Savings Account">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="account-card">
+                <div class="account-icon">💳</div>
+                <div class="account-details">
+                  <h3>Credit Card</h3>
+                  <p>****-****-3456 • American Express</p>
+                </div>
+                <button class="btn-icon danger" aria-label="Remove Credit Card">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Danger Zone Section -->
+        <section class="profile-section danger-zone">
+          <div class="section-header">
+            <h2>Danger Zone</h2>
+          </div>
+          <div class="section-content">
+            <div class="danger-item">
+              <div class="danger-info">
+                <h3>Close Account</h3>
+                <p>Permanently delete your NextGen Banking account and all associated data</p>
+              </div>
+              <button class="btn btn-danger">Close Account</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Edit Profile Modal -->
+      <div class="modal" id="edit-profile-modal" aria-hidden="true" role="dialog" aria-labelledby="edit-profile-title" tabindex="-1">
+        <div class="modal-content">
+          <button class="close-modal" id="close-edit-modal" aria-label="Close modal">&times;</button>
+          <h2 id="edit-profile-title">Edit Profile</h2>
+          <form id="profile-form">
+            <div class="form-group">
+              <label for="modal-full-name">Full Name</label>
+              <input type="text" id="modal-full-name" value="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-dob">Date of Birth</label>
+              <input type="date" id="modal-dob" value="1985-03-15" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-email">Email Address</label>
+              <input type="email" id="modal-email" value="john.doe@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-phone">Phone Number</label>
+              <input type="tel" id="modal-phone" value="+1 (555) 123-4567" required />
+            </div>
+            <div class="form-group">
+              <label for="modal-address">Address</label>
+              <textarea id="modal-address" required>123 Main St, Apt 4B, New York, NY 10001</textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="cancel-edit">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements" id="floating-elements"></div>
+  </div>
+
+  <script>
+    function displayAccount(account) {
+    document.getElementById("account-type").textContent = account.accountType+" Account";
+    // document.getElementById("balance").textContent = `$${account.balance.toFixed(2)}`;
+    document.getElementById("account-number").textContent = maskAccountNumber(account.accountNumber);
+    // document.getElementById("deposit").textContent = "Deposit Funds";
+    // document.getElementById("transfer").textContent = "Transfer Funds";
+}
+
+function maskAccountNumber(accountNumber) {
+    const lastThree = accountNumber.slice(-3);
+    const masked = '*'.repeat(accountNumber.length - 6);
+    return `${masked}-${masked}-${lastThree}`;
+}
+
+    window.addEventListener("DOMContentLoaded", () => {
+      checkAuthStatus();
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const editProfileBtn = document.getElementById('edit-profile-btn');
+  const modal = document.getElementById('edit-profile-modal');
+  const closeModalBtn = document.getElementById('close-edit-modal');
+  const cancelEditBtn = document.getElementById('cancel-edit');
+
+  editProfileBtn.addEventListener('click', () => {
+    modal.classList.add('active');  // Show modal by adding 'active'
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');  // Hide modal by removing 'active'
+  });
+
+  cancelEditBtn.addEventListener('click', () => {
+    modal.classList.remove('active');  // Also hide modal on cancel
+  });
+
+  // Close modal if clicking outside modal-content
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+});
+
+</script>
+</body>
+</html>

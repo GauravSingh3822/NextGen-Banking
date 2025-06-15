@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Banking - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+<!-- Welcome Animation -->
+<div class="welcome-animation">
+    <div class="welcome-logo">
+        <div class="welcome-logo-icon"></div>
+        <div class="welcome-logo-text">NextGen</div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="loading-progress"></div>
+    </div>
+</div>
+
+<!-- Main Content -->   
+<div class="container">
+       <div id="navbar-container"></div>
+
+    <main class="dashboard">
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-grid">
+                <div class="action-card" id="open-account">
+                    <div class="action-icon">📊</div>
+                    <h3>Open Account</h3>
+                    <p>Start a new checking or savings account</p>
+                </div>
+                <div class="action-card" id="transfer-money">
+                    <div class="action-icon">💸</div>
+                    <h3>Transfer Money</h3>
+                    <p>Move funds between accounts</p>
+                </div>
+                <div class="action-card" id="pay-bills">
+                    <div class="action-icon">🧾</div>
+                    <h3>Pay Bills</h3>
+                    <p>Schedule one-time or recurring payments</p>
+                </div>
+                <div class="action-card" id="view-cards">
+                    <div class="action-icon">💳</div>
+                    <h3>View Cards</h3>
+                    <p>Manage your debit/credit cards</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Overview -->
+       <section class="account-overview">
+  <h2>Account Overview</h2>
+  <div class="account-cards">
+    <div class="account-card" id="account-card">
+      <h3 id="account-type">No Account </h3>
+      <div class="balance" id="balance">you're not having any account with us, please open a new account or contact us</div>
+      <div class="account-number" id="account-number"></div>
+      <div class="account-actions">
+        <button class="btn btn-small" id="deposit">Open Account</button>
+        <button class="btn btn-small" id="transfer">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Recent Activity & Notifications -->
+        <div class="activity-notifications">
+            <section class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">🛒</div>
+                        <div class="activity-details">
+                            <div class="activity-description">Amazon Purchase</div>
+                            <div class="activity-date">Today, 10:45 AM</div>
+                        </div>
+                        <div class="activity-amount debit">-$45.67</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🏦</div>
+                        <div class="activity-details">
+                            <div class="activity-description">Direct Deposit</div>
+                            <div class="activity-date">Yesterday, 8:30 AM</div>
+                        </div>
+                        <div class="activity-amount credit">+$2,450.00</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💸</div>
+                        <div class="activity-details">
+                            <div class="activity-description">Transfer to Savings</div>
+                            <div class="activity-date">Mar 15, 4:15 PM</div>
+                        </div>
+                        <div class="activity-amount debit">-$200.00</div>
+                    </div>
+                </div>
+                <a href="#" class="view-all">View All Activity →</a>
+            </section>
+
+            <section class="notifications">
+                <h2>Notifications</h2>
+                <div class="notification-list">
+                    <div class="notification-item important">
+                        <div class="notification-icon">⚠️</div>
+                        <div class="notification-content">
+                            <h3>Security Alert</h3>
+                            <p>New login detected from Chrome on Windows</p>
+                            <div class="notification-time">10 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">📅</div>
+                        <div class="notification-content">
+                            <h3>Payment Reminder</h3>
+                            <p>Your credit card payment is due in 3 days</p>
+                            <div class="notification-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">🎉</div>
+                        <div class="notification-content">
+                            <h3>New Feature</h3>
+                            <p>Try our new budgeting tools</p>
+                            <div class="notification-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-all">View All Notifications →</a>
+            </section>
+        </div>
+
+        <!-- Financial Insights -->
+        <section class="financial-insights">
+            <h2>Financial Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card spending">
+                    <h3>Monthly Spending</h3>
+                    <div class="insight-value">$1,245.67</div>
+                    <div class="insight-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <div class="progress-label">65% of budget</div>
+                    </div>
+                </div>
+                <div class="insight-card savings-goal">
+                    <h3>Savings Goal</h3>
+                    <div class="insight-value">$3,200/$5,000</div>
+                    <div class="insight-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 64%"></div>
+                        </div>
+                        <div class="progress-label">64% complete</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements" id="floating-elements"></div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create floating elements
+        const floatingContainer = document.getElementById('floating-elements');
+        for (let i = 0; i < 15; i++) {
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+
+            // Random size between 50px and 200px
+            const size = Math.random() * 150 + 50;
+            element.style.width = `${size}px`;
+            element.style.height = `${size}px`;
+
+            // Random position
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.top = `${Math.random() * 100}%`;
+
+            // Random animation duration
+            element.style.animationDuration = `${Math.random() * 10 + 10}s`;
+
+            floatingContainer.appendChild(element);
+        }
+
+        // Check authentication status
+        checkAuthStatus();
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            logout();
+        });
+
+        // Quick action buttons
+        document.querySelectorAll('.action-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const action = this.id;
+                alert(`Action selected: ${action.replace('-', ' ')}`);
+                // In a real app, you would navigate to the appropriate page
+            });
+        });
+    });
+
+    function initWelcomeAnimation() {
+        const welcomeAnimation = document.querySelector('.welcome-animation');
+        const progressBar = document.getElementById('loading-progress');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 10;
+            if (progress > 100) progress = 100;
+            progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    welcomeAnimation.classList.add('fade-out');
+                }, 500);
+            }
+        }, 200);
+    }
+
+    // Initialize welcome animation
+    initWelcomeAnimation();
+
+function displayAccount(account) {
+    document.getElementById("account-type").textContent = account.accountType;
+    document.getElementById("balance").textContent = `Rs. ${account.balance.toFixed(2)}`;
+    document.getElementById("account-number").textContent = maskAccountNumber(account.accountNumber);
+    document.getElementById("deposit").textContent = "Deposit Funds";
+    document.getElementById("transfer").textContent = "Transfer Funds";
+}
+
+function maskAccountNumber(accountNumber) {
+    const lastThree = accountNumber.slice(-3);
+    const masked = '•'.repeat(accountNumber.length - 3);
+    return `${masked}${lastThree}`;
+}
+
+
+document.addEventListener("DOMContentLoaded", checkAuthStatus);
+
+
+</script>
+</html>

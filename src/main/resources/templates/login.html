@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Banking - Authentication</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+   <!--  Login Page (login.html)  -->
+    
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="floating-elements" id="floating-elements"></div>
+            <div class="welcome-message">
+                <h2>Welcome Back to NextGen Banking</h2>
+                <p>Securely access your account and manage your finances with our cutting-edge banking platform.</p>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-card">
+                <div class="auth-logo">
+                    <div class="auth-logo-icon"></div>
+                    <div class="auth-logo-text">NextGen</div>
+                </div>
+                <h1 class="auth-title">Login to Your Account</h1>
+                <p class="auth-subtitle">Enter your credentials to access your dashboard</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                        <div class="invalid-feedback" id="loginEmailError">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                        <div class="invalid-feedback" id="loginPasswordError">Please enter your password</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                
+                <div class="auth-footer">
+                    Don't have an account? <a href="register.html">Create one</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script type="module" src="js/login.js"></script>
+ 
+
+</body>
+</html>
